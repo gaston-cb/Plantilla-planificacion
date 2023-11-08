@@ -7,7 +7,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{ ADCS - Attitude determination control system board} 
+\titulo{Sistema de control y determinación de actitud (ADCS BOARD)} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,12 +17,12 @@
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Valdez Gastón} 
+\autor{Ing. Valdez Gastón} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y 
 %y \pertecosupname
 %\pertesupname{Aerospace Laboratory} 
-\director{Amilcar Rincón Charris}
+\director{Dr Amilcar Rincón Charris}
 \pertenenciaDirector{Aerospace Laboratory} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 %\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
@@ -40,9 +40,9 @@
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{10 de octubre 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{5 de diciembre 2023} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{30 de septiembre de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -71,7 +71,9 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+1      & Se añade contexto en sección 1 \newline
+Sección 4 se redacta la última oración\newline 
+Se redactan las secciones 5 a 9              & 11 de noviembre 2023\\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -94,8 +96,8 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consiste  en el diseño electrónico de un módulo  Attitude determination control systems para introducirse en un cubesat.  
- con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consiste  en el diseño de un módulo electrónico de un sistema ADCS cuya funcionalidad es orientar de forma controlada un satélite denominado cubesat y tendrá un presupuesto estimado de 600 hs de trabajo y
+con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -117,32 +119,37 @@ Se adjunta a esta acta la planificación inicial.
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
+% agregar descripción 
+%En el marco de la realización del proyecto para la aprobación de la carrera de especialización de sistemas embebidos, se ha contactado el Dr Rincon Amilcar, director del equipo PR-cunar2, perteneciente a la universidad de Puerto Rico. Esta institución se dedica a la realización de desarrollos para la industria aeroespacial. En la actualidad se encuentra en desarrollo un cubesat que será puesto en órbita a finales del año 2024.  
 
-Un cubesat es un satélite que posee una estructura de 10x10x10 cm y que posee un peso máximo de 1,33 kg. Los satélites cubesat permiten que distintos investigadores y entusiastas del espacio envien satélites al espacio con un costo relativamente bajo respecto a otro tipo de soluciones. La construcción de un  cubesat se realiza mediante módulos electrónicos ensamblados entre sí usando el conector denominado PC104. 
+El presente proyecto, se realiza para el equipo PR-cunar2, perteneciente a la Universidad de Puerto Rico. Este equipo se dedica al desarrollo de la industria aerospacial. En este trabajo se desarrolla un módulo de hardware y software dedicado al control de la orientación de un satélite, que irá dentro de un satelite denominado cubesat.
 
-Un módulo electrónico que es parte de un cubesat se denomina ADCS, este es responsable de controlar y mantener la orientación del cubesat en el espacio. Este tipo de control  permite que los instrumentos que se encuentren dentro del satélite se orienten en direcciones especificas.  Por ejemplo puede orientar su antena hacia la tierra para que la comunicación con tierra tenga mayor fluidez. 
+Un cubesat es un satélite que posee una estructura de 10x10x10 cm y que posee un peso máximo de 1,33 kg. Los satélites cubesat permiten que distintos investigadores y entusiastas del espacio envien satélites al espacio con un costo relativamente bajo respecto a otro tipo de soluciones. La construcción de un  cubesat se realiza mediante módulos electrónicos ensamblados entre sí usando el bus conector denominado PC104. 
 
-Los sistemas ADCS tienen dos tipos de sensores: de posicionamiento o inerciales. Los primeros se relacionan con el conocimiento de la posición absoluta,es decir, requiere un conocimiento del entorno. Los sensores inerciales no requieren este tipo de conocimiento, sino que, utilizan parámetros como velocidad angular o aceleración. 
+Un módulo electrónico que es parte de un cubesat se denomina ADCS (Attitude determination control system), este es responsable de controlar y mantener la orientación del cubesat en el espacio. Este tipo de control  permite que los instrumentos que se encuentren dentro del satélite se orienten en direcciones especificas.  Por ejemplo puede orientar su antena hacia la tierra para que la comunicación con tierra tenga mayor fluidez. 
 
-Estos sistemas no solamente deben realizar la lectura de los sensores, sino que actúan sobre el sistema para orientar el satélite en la posición deseada y mantenerla estable. Esta actuación se realiza mediante ruedas de reacción o torques magnéticos para realizar ajustes cuando el satelite se encuentra orbitando la tierra.
+Los sistemas ADCS tienen dos tipos de sensores: de posicionamiento o inerciales. Los primeros se relacionan con el conocimiento de la posición absoluta, es decir, requiere un conocimiento del entorno. Los sensores inerciales no requieren este tipo de conocimiento, sino que utilizan parámetros como velocidad angular o aceleración. 
 
-Para generar el movimiento con el uso de ruedas de reacción o torques magnéticos, se debe  conocer la posición y orientación en el espacio del cubesat. Una vez conocidos ambos parámetros, mediante un proceso denominado “algoritmo de fusión” produce la actuación sobre las ruedas de reacción o magnetorques para orientar al cubesat en la posición deseada.
+Estos sistemas no solamente deben realizar la lectura de los sensores, sino que actúan sobre el sistema para orientar el satélite en la posición deseada y mantenerla estable. Esta actuación se realiza mediante ruedas de reacción o torques magnéticos para realizar ajustes angulares cuando el satelite se encuentra orbitando la tierra.
+
+Para generar el ajuste angular con el uso de ruedas de reacción o torques magnéticos, se debe  conocer la posición y orientación en el espacio del cubesat. Una vez conocidos ambos parámetros, mediante un proceso denominado “algoritmo de fusión” produce la actuación sobre las ruedas de reacción o magnetorques para orientar al cubesat en la posición deseada.
 
  Los sistemas ADCS se encuentran de forma comercial y  existen empresas que proveen este tipo de soluciones para los cubesats. El presente proyecto consiste en el desarrollo de un sistema ADCS. El desarrollo propio contiene las siguientes ventajas frente a las soluciones comerciales: 
 \begin{itemize}
-	\item Selección de torques magnéticos, ruedas de tracción o innovar en mecanismos de orientación. 
+	\item Selección de torques magnéticos, ruedas de reacción o innovar en mecanismos de orientación. 
 	\item Realizar distintos algoritmos y probar la eficiencia de consumo eléctrico. 
-	\item Posibilidad de generar un producto comercial 
+	\item Posibilidad de generar un producto comercial. 
 \end{itemize}
 
 
- El diagrama en bloques propuesto para el desarrollo del proyecto consiste en el diagrama de la figura \ref{fig:adcs}. El proyecto se divide en dos etapas: fase de prototipo y versión final. Una vez finalizada la fase de prototipado se realizan las pruebas de validación del sistema.  Una vez superada la etapa de validación se procede al desarrollo en su versión final y comienza la segunda fase del proyecto. 
- Cabe destacar que como subproducto puede generarse una placa comercial, siendo esto último deseable pero no exigible por parte del cliente. 
+%El diagrama en bloques propuesto para el desarrollo del proyecto consiste en el diagrama de la figura \ref{fig:adcs}.
+El diagrama en bloques del sistema ADCS se muestra en la figura \ref{fig:adcs}. El proyecto se divide en dos etapas: fase de prototipo y versión final. Una vez finalizada la fase de prototipado se realizan las pruebas de validación del sistema.  Una vez superada la etapa de validación se procede al desarrollo en su versión final y comienza la segunda fase del proyecto. 
+Cabe destacar que como subproducto puede generarse una placa comercial, siendo esto último deseable pero no exigible por parte del cliente. 
 
 \begin{figure}[htpb]
 	\centering 
 	\includegraphics[width=.8\textwidth]{Figuras/sistemaadcs.png}
-	\caption{Diagrama de \textit{Activity on Node}.}
+	\caption{Diagrama en bloques del sistema a implementar.}
 	\label{fig:adcs}
 \end{figure}
 
@@ -177,70 +184,171 @@ Para generar el movimiento con el uso de ruedas de reacción o torques magnétic
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 \begin{itemize}
-	\item Desarrollo del algoritmo ADCS 
-	\item Desarrollo de software en C/C++ para el sistema embebido 
-	\item Diseño y desarrollo del protocolo de comunicación utilizando el conector PC104
-	\item Diseño y simulación del hardware asociado al microcontrolador 
-	\item Diseño de ensayos de validación (TBD) 
-	\item Generación de documentación. 
-	\item Integración a un cubesat funcional(TBD)
+	\item Desarrollo del algoritmo ADCS. 
+	\item Desarrollo de software en C/C++ para el sistema embebido. 
+	\item Diseño y desarrollo del protocolo de comunicación utilizando el conector PC104.
+	\item Diseño y simulación del hardware asociado al microcontrolador. 
+	\item Validación del producto.
+	\item Generación de documentación.  
+	\item Integración a un cubesat funcional (TBD).
 \end{itemize}
-	El alcance del proyecto no contempla la fabricación del PCB y los ensayos de validación se realizarán en un lugar a definir con el cliente. 
+	El alcance del proyecto contempla el diseño y fabricación del PCB y	los ensayos para realizar la validación del producto se debe acordar con el cliente.  
+	
+%	de validación se realizarán en un lugar a definir con el cliente. 
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 \begin{itemize}
-	\item Los componentes serán seleccionados y se poseen los recursos económicos para su adquisición  
+	\item El proyecto posee financiamiento para la adquisición de productos electrónicos.   
 	\item El sistema embebido posee disponibilidad en el mercado. 
-	\item Se tienen las licencias correspondientes para los programas de simulación electrónica y diseño de PCB  
-	\item Se posee acceso a pc con sistema linux/windows 
+	\item Se tienen las licencias correspondientes para los programas de simulación electrónica y diseño de PCB.  
+	\item Se posee acceso a pc con sistema Linux/Windows. 
 	\item El personal abocado al diseño mecánico realizará el trabajo en tiempo y forma.  
 	\item Hay recursos económicos disponibles para enviar a fabricar la placa de circuito impreso. 
-	\item El flujo de trabajo se define con anterioridad 
+	\item Se define previamente un flujo de trabajo con el cliente. 
+%	\item Se dispone del acceso al repositorio institucional del cliente 
 \end{itemize}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
+	En los items que se enumeran a continuación se utiliza la sigla TBD: ''to be defined'' e implica que algunos requerimientos no se han acordado con el cliente. 
+
 \begin{enumerate}
-	\item Req funcional
+	\item Requerimientos funcionales.
 		\begin{enumerate}
-			\item posee sistema 1 
-			\item posee sistem 2 
-			
+			\item La orientación espacial de los sensores y actuadores del cubesat deben alinearse a los ejes principales del cubesat.
+			\item  estimar la altitud y proporcionar control en un tiempo suficientemente corto (TBD) para que el sistema pueda controlarse exitosamente. 
+			\item El control de posición se realiza en los eje x, y,z solidarios al cubesat.  
+			\item El error máximo en la actuación del satélite será de un 10 \% respecto a la referencia elida. 
+			\item El algoritmo de control se plantea sobre cubesat de 1 U (10x10x10 cm).
+			\item La comunicación entre el ADCS y la computadora central será utilizando el protocolo SPI (opcional).  % entre uc y sensores   
+			\item La comunicación con la OBC será mediante bus CAN (opcional).  
+			\item Se debe utilizar un microcontrolador de bajo consumo. 
 		\end{enumerate}
-
-	\item Req funcional
+	\item El software debe realizarse sobre un sistema operativo de tiempo real.   
+	\item El software debe gestionarse mediante un sistema de control de versiones. 
+	\item Requerimientos de Test.
 		\begin{enumerate}
-			\item posee sistema 1 
-			\item posee sistem 2 	
+			\item  El algoritmo de control en C/C++ debe contrastarse contra matlab u octave, scilab,etc. 
+			\item  Los drivers de software deben pasar tests unitarios. 
+			\item  El prototipo y su versión final debe superar el ensayo en una bobina de Helmholtz de al menos dos ejes.  
+%			\item Las señales  
 		\end{enumerate}
+\item Requerimientos de hardware.
+	\begin{enumerate}
+		\item La placa de circuito impreso tendrá un tamaño máximo de 10x10 cm.
+		\item El conector a utilizar es el PC104 con el estándar para cubesats. 
+		\item El PCB tendrá unívocamente identificado el eje x positivo y negativo, y positivo y negativo y z positivo y negativo. 
+	\end{enumerate}
 
-
-
+\item Requerimientos de documentación.
+	\begin{enumerate}
+		\item Descripción del algoritmo implementado. 
+		\item Resultados del algoritmo. 
+		\item Archivos de simulación y archivos de PCB. 
+		\item Memoria técnica.
+		\item Código fuente del sistema. 
+	\end{enumerate}
 \end{enumerate}
 
 
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
+Las historias de usuario se han escrito desde la perspectiva un ingeniero de control de misión, operador de misión espacial y científico de la misión espacial. La evaluación de las historias de usuario se evalúan en base a la complejidad de realización mediante el siguiente criterio: 
+\begin{itemize}
+	\item muy bajo: 1 punto 
+	\item bajo: 2 punto 
+	\item medio : 3 punto 
+	\item alto: 4 punto 
+	\item muy alto: 5 punto 
+	
+
+\end{itemize}
+
+\begin{itemize}
+
+	 \item Como ingeniero de control de misión, quiero que el sistema de ADCS tenga la capacidad de realizar una calibración automática de los sensores de actitud a bordo para garantizar la precisión y confiabilidad de los datos de orientación. 
+		\begin{itemize}
+			\item muy alto: 5 puntos
+		\end{itemize}
+	
+	
+	\item Como operador de una misión espacial, necesito que el sistema de ADCS tenga la capacidad de realizar ajustes dinámicos en la orientación de la nave espacial en tiempo real. .
+		\begin{itemize}
+			\item muy alto: 5 puntos
+		\end{itemize}
+	\item Como científico de la misión espacial, necesito que el sistema de ADCS sea capaz de proporcionar una estabilización precisa y estable de la nave espacial durante las observaciones científicas. Durante estas observaciones, es crucial evitar cualquier tipo de movimiento o vibración que pueda afectar la calidad de los datos recopilados. 
+		\begin{itemize}
+			\item muy alto: 5 puntos
+		\end{itemize}
+\end{itemize}
 
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 \begin{itemize}
-	\item Archivos de simulación 
-	\item Scripts de simulación 
-	\item Archivos de esquemáticos en PDF y archivo original 
-	\item 
+	\item Archivos de simulación. 
+	\item Scripts de simulación. 
+	\item Archivos de esquemáticos en PDF y archivo original. 
+	\item Código fuente del software. 
 
 \end{itemize}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
+\begin{enumerate}
+	\item Investigación preliminar
+		\begin{enumerate}
+			\item Búsqueda bibliográfica sobre sistemas de coordenadas en sistemas ADCS (4 hs). 
+			\item Investigación de sistemas de coordenadas y algoritmos ADCS (25 hs).
+			\item Simulaciones con algoritmos ADCS y sistemas coordenados (40 hs).   
+			\item Selección de sensores, actuadores y microcontrolador para el desarrollo (20 hs).					
+		\end{enumerate}
+	\item Diseño de software y hardware ADCS. 
+		\begin{enumerate}
+			\item Simulación de datos de sensores en C (20 hs).
+			\item Codificación del algoritmo ADCS en C (40 hs). 
+			\item Contraste de algoritmo contra simulaciones(10 hs). 
+			\item Diseño de arquitectura de software (25 hs). 
+			\item Codificación de arquitectura de software (60 hs). 
+			\item Diseño y simulación electrónica (esquemático)  (20 hs). 
+			\item Diseño de PCB  (40 hs). 
+			\item Fabricación de PCB  (5 hs). 
+			\item Verificar la importación y tramites aduaneros para el envió del producto a Argentina (8 hs). 
+		\end{enumerate}
+	\item Etapa de testing
+		\begin{enumerate}
+			\item Ensayo del bus de comunicación (16 hs). 
+			\item Búsqueda de lugares que tengan facilidad con bobina de Helmholtz de dos ejes para medir microsatelites (5 hs).
+			\item  Medición de parámetros eléctricos y de software de la placa prototipado (20 hs).
+			\item  Informe con resultados y propuestas de mejoras (8 hs).	
+		\end{enumerate}
+	\item Desarrollo final del producto. 
+		\begin{enumerate}
+			\item Realizar correcciones de software (25 hs). 
+			\item Realizar correcciones en el diseño del PCB (25 hs).
+			\item Fabricación del PCB (3 hs) . 
+			\item Ensayo con bobina de Helmholtz (10 hs). 		
+			\item Medición de parámetros eléctricos y de software de la placa en su versión final (10 hs). 
+			\item Redacción de informe y memoria técnica (60 hs). 
+		\end{enumerate}
+
+Cantidad total de horas: 529 hs.  
+
+
+\end{enumerate}
+
+
+
+
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
+
+
+
 
 
 
