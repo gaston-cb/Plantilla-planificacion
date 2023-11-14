@@ -7,7 +7,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Sistema de control y determinación de actitud (ADCS BOARD)} 
+\titulo{Sistema de control y determinación de actitud (ADCS \textit{board})} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -22,14 +22,14 @@
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y 
 %y \pertecosupname
 %\pertesupname{Aerospace Laboratory} 
-\director{Dr Amilcar Rincón Charris}
+\director{Dr. Amilcar Rincón Charris}
 \pertenenciaDirector{Aerospace Laboratory} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 %\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 %\pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Amilcar Rincon Charris}
+\cliente{Dr. Amilcar Rincon Charris}
 \empresaCliente{Aerospace Laboratory}
 %\pertesupname{lalallal}
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
@@ -71,14 +71,17 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se añade contexto en sección 1 \newline
-Sección 4 se redacta la última oración\newline 
-Se redactan las secciones 5 a 9              & 11 de noviembre 2023\\ \hline
-%2      & Se completa hasta el punto 7 inclusive
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & dd/mm/aaaa \\ \hline
-%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
+1      & Se añade contexto en sección 1 \newline Se vuelve a redactar el primer ítem de la sección 5\newline
+Sección 4 se redacta la última oración 
+             & 11 de noviembre 2023\\ \hline
+2      & Se redactan las secciones 5 a 9 & 11 de noviembre 2023 \\ \hline  
+3      & Se completa hasta el punto 12 inclusive 
+		 \newline Se cambia cubesat por CubeSat
+		 \newline Se modifica la segunda sección
+		 \newline Se cambia la cantidad de horas de algunas de las tareas               & 13/11/2023 \\ 
+
+
+\hline
 %4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
@@ -96,7 +99,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consiste  en el diseño de un módulo electrónico de un sistema ADCS cuya funcionalidad es orientar de forma controlada un satélite denominado cubesat y tendrá un presupuesto estimado de 600 hs de trabajo y
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consiste  en el diseño electrónico de un sistema ADCS cuya funcionalidad es orientar de forma controlada un satélite denominado CubeSat y tendrá un presupuesto estimado de 600 hs de trabajo y
 con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
@@ -120,21 +123,21 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 % agregar descripción 
-%En el marco de la realización del proyecto para la aprobación de la carrera de especialización de sistemas embebidos, se ha contactado el Dr Rincon Amilcar, director del equipo PR-cunar2, perteneciente a la universidad de Puerto Rico. Esta institución se dedica a la realización de desarrollos para la industria aeroespacial. En la actualidad se encuentra en desarrollo un cubesat que será puesto en órbita a finales del año 2024.  
+%En el marco de la realización del proyecto para la aprobación de la carrera de especialización de sistemas embebidos, se ha contactado el Dr Rincon Amilcar, director del equipo PR-cunar2, perteneciente a la universidad de Puerto Rico. Esta institución se dedica a la realización de desarrollos para la industria aeroespacial. En la actualidad se encuentra en desarrollo un CubeSat que será puesto en órbita a finales del año 2024.  
 
-El presente proyecto, se realiza para el equipo PR-cunar2, perteneciente a la Universidad de Puerto Rico. Este equipo se dedica al desarrollo de la industria aerospacial. En este trabajo se desarrolla un módulo de hardware y software dedicado al control de la orientación de un satélite, que irá dentro de un satelite denominado cubesat.
+El presente proyecto, se realiza para el equipo PR-cunar2, perteneciente a la Universidad de Puerto Rico. Este equipo se dedica al desarrollo de la industria aeroespacial. En este trabajo se desarrolla un módulo de hardware y software dedicado al control de la orientación de un satélite, que irá dentro de un satélite denominado CubeSat.
 
-Un cubesat es un satélite que posee una estructura de 10x10x10 cm y que posee un peso máximo de 1,33 kg. Los satélites cubesat permiten que distintos investigadores y entusiastas del espacio envien satélites al espacio con un costo relativamente bajo respecto a otro tipo de soluciones. La construcción de un  cubesat se realiza mediante módulos electrónicos ensamblados entre sí usando el bus conector denominado PC104. 
+Un CubeSat es un satélite que posee una estructura de 10x10x10 cm y que posee un peso máximo de 1,33 kg. Los satélites CubeSat permiten que distintos investigadores y entusiastas del espacio envien satélites al espacio con un costo relativamente bajo respecto a otro tipo de soluciones. La construcción de un  CubeSat se realiza mediante módulos electrónicos ensamblados entre sí usando el bus conector denominado PC104. 
 
-Un módulo electrónico que es parte de un cubesat se denomina ADCS (Attitude determination control system), este es responsable de controlar y mantener la orientación del cubesat en el espacio. Este tipo de control  permite que los instrumentos que se encuentren dentro del satélite se orienten en direcciones especificas.  Por ejemplo puede orientar su antena hacia la tierra para que la comunicación con tierra tenga mayor fluidez. 
+Un módulo electrónico que es parte de un CubeSat se denomina ADCS (\textit{Attitude determination control system}), este es responsable de controlar y mantener la orientación del CubeSat en el espacio. Este tipo de control  permite que los instrumentos que se encuentren dentro del satélite se orienten en direcciones específicas.  Por ejemplo puede orientar su antena hacia la tierra para que la comunicación con tierra tenga mayor fluidez. 
 
 Los sistemas ADCS tienen dos tipos de sensores: de posicionamiento o inerciales. Los primeros se relacionan con el conocimiento de la posición absoluta, es decir, requiere un conocimiento del entorno. Los sensores inerciales no requieren este tipo de conocimiento, sino que utilizan parámetros como velocidad angular o aceleración. 
 
-Estos sistemas no solamente deben realizar la lectura de los sensores, sino que actúan sobre el sistema para orientar el satélite en la posición deseada y mantenerla estable. Esta actuación se realiza mediante ruedas de reacción o torques magnéticos para realizar ajustes angulares cuando el satelite se encuentra orbitando la tierra.
+Estos sistemas no solamente deben realizar la lectura de los sensores, sino que actúan sobre el sistema para orientar el satélite en la posición deseada y mantenerla estable. Esta actuación se realiza mediante ruedas de reacción o torques magnéticos para realizar ajustes angulares cuando el satélite se encuentra orbitando la tierra.
 
-Para generar el ajuste angular con el uso de ruedas de reacción o torques magnéticos, se debe  conocer la posición y orientación en el espacio del cubesat. Una vez conocidos ambos parámetros, mediante un proceso denominado “algoritmo de fusión” produce la actuación sobre las ruedas de reacción o magnetorques para orientar al cubesat en la posición deseada.
+Para generar el ajuste angular con el uso de ruedas de reacción o torques magnéticos, se debe  conocer la posición y orientación en el espacio del CubeSat. Una vez conocidos ambos parámetros, mediante un proceso denominado “algoritmo de fusión” produce la actuación sobre las ruedas de reacción o magnetorques para orientar al CubeSat en la posición deseada.
 
- Los sistemas ADCS se encuentran de forma comercial y  existen empresas que proveen este tipo de soluciones para los cubesats. El presente proyecto consiste en el desarrollo de un sistema ADCS. El desarrollo propio contiene las siguientes ventajas frente a las soluciones comerciales: 
+ Los sistemas ADCS se encuentran de forma comercial y  existen empresas que proveen este tipo de soluciones para los CubeSats. El presente proyecto consiste en el desarrollo de un sistema ADCS. El desarrollo propio contiene las siguientes ventajas frente a las soluciones comerciales: 
 \begin{itemize}
 	\item Selección de torques magnéticos, ruedas de reacción o innovar en mecanismos de orientación. 
 	\item Realizar distintos algoritmos y probar la eficiencia de consumo eléctrico. 
@@ -155,6 +158,7 @@ Cabe destacar que como subproducto puede generarse una placa comercial, siendo e
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
+	El Dr. Amilcar Rincón Charris ocupa la posición de cliente y director. En la tabla se le ha asignado el rol de mayor importancia.
 
 
 \begin{table}[ht]
@@ -164,22 +168,22 @@ Cabe destacar que como subproducto puede generarse una placa comercial, siendo e
 		\hline
 		\rowcolor[HTML]{C0C0C0} 
 		Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-		Auspiciante   &                   &              	&        	\\ \hline
-		Cliente       & \clientename      &\empclientename	&        	\\ \hline
-		Impulsor      &                   &              	&        	\\ \hline
+		Auspiciante   &  Gerardo Morell    & NASA Epscor             	& Investigador principal  \\ \hline		
+%		Cliente       & \clientename      &\empclientename	& Investigador científico \\ \hline
+%		Impulsor      & 	                  &              	&        	\\ \hline
 		Responsable   & \authorname       & IAR        	& Alumno 	\\ \hline
-		Colaboradores &                   &              	&        	\\ \hline
+		Colaboradores & Sebastián Medina                   &  Aerospace Laboratory        	& Asistente de laboratorio       	\\ \hline
 		Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-		Equipo        &  -                &  -             	& -        	\\ \hline
-		Opositores    &                   &              	&        	\\ \hline
-		Usuario final & \supname     &      \pertesupname        	&        	\\ \hline
+%		Equipo        &  -                &  -             	& -        	\\ \hline
+%		Opositores    &                   &              	&        	\\ \hline
+		Usuario final & Dueño de un CubeSat     &      NanoRack        	&      -   	\\ \hline
 	\end{tabularx}
 \end{table}
 
 
 \section{3. Propósito del proyecto}
 
-	El propósito del proyecto es generar el módulo electrónico del sistema ADCS para un cubesat. 
+	El propósito del proyecto es generar el módulo electrónico del sistema ADCS para un CubeSat. 
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -190,13 +194,11 @@ Cabe destacar que como subproducto puede generarse una placa comercial, siendo e
 	\item Diseño y simulación del hardware asociado al microcontrolador. 
 	\item Validación del producto.
 	\item Generación de documentación.  
-	\item Integración a un cubesat funcional (TBD).
+	\item Integración a un CubeSat funcional (TBD).
 \end{itemize}
-	El alcance del proyecto contempla el diseño y fabricación del PCB y	los ensayos para realizar la validación del producto se debe acordar con el cliente.  
 	
-%	de validación se realizarán en un lugar a definir con el cliente. 
-
-
+	El alcance del proyecto contempla el diseño y fabricación del PCB y	los ensayos para realizar la validación del producto se deben acordar con el cliente.  
+	
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 \begin{itemize}
@@ -212,16 +214,17 @@ Cabe destacar que como subproducto puede generarse una placa comercial, siendo e
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
-	En los items que se enumeran a continuación se utiliza la sigla TBD: ''to be defined'' e implica que algunos requerimientos no se han acordado con el cliente. 
+	En los items que se enumeran a continuación se utiliza la sigla TBD (\textit{to be defined}) 
+	y significa que el requerimiento aún no se termino de acordar con el cliente. 
 
 \begin{enumerate}
 	\item Requerimientos funcionales.
 		\begin{enumerate}
-			\item La orientación espacial de los sensores y actuadores del cubesat deben alinearse a los ejes principales del cubesat.
-			\item  estimar la altitud y proporcionar control en un tiempo suficientemente corto (TBD) para que el sistema pueda controlarse exitosamente. 
-			\item El control de posición se realiza en los eje x, y,z solidarios al cubesat.  
-			\item El error máximo en la actuación del satélite será de un 10 \% respecto a la referencia elida. 
-			\item El algoritmo de control se plantea sobre cubesat de 1 U (10x10x10 cm).
+			\item La orientación espacial de los sensores y actuadores del CubeSat deben alinearse a los ejes principales del CubeSat.
+			\item  Estimar la altitud y proporcionar control en un tiempo suficientemente corto (TBD) para que el sistema pueda controlarse exitosamente. 
+			\item El control de posición se realiza en los eje x, y,z solidarios al CubeSat.  
+			\item El error máximo en la actuación del satélite será de un 10 \% respecto a la referencia elegida. 
+			\item El algoritmo de control se plantea sobre CubeSat de 1 U (10x10x10 cm).
 			\item La comunicación entre el ADCS y la computadora central será utilizando el protocolo SPI (opcional).  % entre uc y sensores   
 			\item La comunicación con la OBC será mediante bus CAN (opcional).  
 			\item Se debe utilizar un microcontrolador de bajo consumo. 
@@ -230,7 +233,7 @@ Cabe destacar que como subproducto puede generarse una placa comercial, siendo e
 	\item El software debe gestionarse mediante un sistema de control de versiones. 
 	\item Requerimientos de Test.
 		\begin{enumerate}
-			\item  El algoritmo de control en C/C++ debe contrastarse contra matlab u octave, scilab,etc. 
+			\item  El algoritmo de control en C/C++ debe contrastarse contra matlab u octave, scilab, etc. 
 			\item  Los drivers de software deben pasar tests unitarios. 
 			\item  El prototipo y su versión final debe superar el ensayo en una bobina de Helmholtz de al menos dos ejes.  
 %			\item Las señales  
@@ -238,7 +241,7 @@ Cabe destacar que como subproducto puede generarse una placa comercial, siendo e
 \item Requerimientos de hardware.
 	\begin{enumerate}
 		\item La placa de circuito impreso tendrá un tamaño máximo de 10x10 cm.
-		\item El conector a utilizar es el PC104 con el estándar para cubesats. 
+		\item El conector a utilizar es el PC104 con el estándar para CubeSats. 
 		\item El PCB tendrá unívocamente identificado el eje x positivo y negativo, y positivo y negativo y z positivo y negativo. 
 	\end{enumerate}
 
@@ -258,30 +261,28 @@ Cabe destacar que como subproducto puede generarse una placa comercial, siendo e
 \label{sec:backlog}
 Las historias de usuario se han escrito desde la perspectiva un ingeniero de control de misión, operador de misión espacial y científico de la misión espacial. La evaluación de las historias de usuario se evalúan en base a la complejidad de realización mediante el siguiente criterio: 
 \begin{itemize}
-	\item muy bajo: 1 punto 
-	\item bajo: 2 punto 
-	\item medio : 3 punto 
-	\item alto: 4 punto 
-	\item muy alto: 5 punto 
-	
-
+	\item Muy bajo: 1 punto 
+	\item Bajo: 2 punto 
+	\item Medio : 3 punto 
+	\item Alto: 4 punto 
+	\item Muy alto: 5 punto 
 \end{itemize}
 
 \begin{itemize}
 
 	 \item Como ingeniero de control de misión, quiero que el sistema de ADCS tenga la capacidad de realizar una calibración automática de los sensores de actitud a bordo para garantizar la precisión y confiabilidad de los datos de orientación. 
 		\begin{itemize}
-			\item muy alto: 5 puntos
+			\item Muy alto: 5 puntos
 		\end{itemize}
 	
 	
 	\item Como operador de una misión espacial, necesito que el sistema de ADCS tenga la capacidad de realizar ajustes dinámicos en la orientación de la nave espacial en tiempo real. .
 		\begin{itemize}
-			\item muy alto: 5 puntos
+			\item Muy alto: 5 puntos
 		\end{itemize}
 	\item Como científico de la misión espacial, necesito que el sistema de ADCS sea capaz de proporcionar una estabilización precisa y estable de la nave espacial durante las observaciones científicas. Durante estas observaciones, es crucial evitar cualquier tipo de movimiento o vibración que pueda afectar la calidad de los datos recopilados. 
 		\begin{itemize}
-			\item muy alto: 5 puntos
+			\item Muy alto: 5 puntos
 		\end{itemize}
 \end{itemize}
 
@@ -298,44 +299,47 @@ Las historias de usuario se han escrito desde la perspectiva un ingeniero de con
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
+	A continuación se enumeran las tareas con su código WBS (\textit{Work Breakdown Structure}) correspondiente.  
 \begin{enumerate}
 	\item Investigación preliminar
 		\begin{enumerate}
-			\item Búsqueda bibliográfica sobre sistemas de coordenadas en sistemas ADCS (4 hs). 
-			\item Investigación de sistemas de coordenadas y algoritmos ADCS (25 hs).
-			\item Simulaciones con algoritmos ADCS y sistemas coordenados (40 hs).   
-			\item Selección de sensores, actuadores y microcontrolador para el desarrollo (20 hs).					
+			\item Búsqueda bibliográfica sobre sistemas de coordenadas en sistemas ADCS (4 h). 
+			\item Investigación de sistemas de coordenadas y algoritmos ADCS (40 h).
+			\item Simulaciones con algoritmos ADCS y sistemas coordenados (40 h).   
+			\item Selección de sensores, actuadores y microcontrolador para el desarrollo (40 h).					
 		\end{enumerate}
 	\item Diseño de software y hardware ADCS. 
 		\begin{enumerate}
-			\item Simulación de datos de sensores en C (20 hs).
-			\item Codificación del algoritmo ADCS en C (40 hs). 
-			\item Contraste de algoritmo contra simulaciones(10 hs). 
-			\item Diseño de arquitectura de software (25 hs). 
-			\item Codificación de arquitectura de software (60 hs). 
-			\item Diseño y simulación electrónica (esquemático)  (20 hs). 
-			\item Diseño de PCB  (40 hs). 
-			\item Fabricación de PCB  (5 hs). 
-			\item Verificar la importación y tramites aduaneros para el envió del producto a Argentina (8 hs). 
+			\item Simulación de datos de sensores en C (20 h).
+			\item Codificación del algoritmo ADCS en C (40 h). 
+			\item Contraste de algoritmo contra simulaciones(10 h). 
+			\item Diseño de arquitectura de software (25 h). 
+			\item Codificación de drivers de sensores y actuadores (40 h). 
+			\item Integración del software (30 hs). 
+			\item Diseño y simulación electrónica (esquemático)  (30 h). 
+			\item Diseño de PCB  (40 h). 
+			\item Fabricación de PCB  (5 h). 
+			\item Verificar la importación y trámites aduaneros para el envió del producto a Argentina (8 h). 
 		\end{enumerate}
 	\item Etapa de testing
 		\begin{enumerate}
-			\item Ensayo del bus de comunicación (16 hs). 
-			\item Búsqueda de lugares que tengan facilidad con bobina de Helmholtz de dos ejes para medir microsatelites (5 hs).
-			\item  Medición de parámetros eléctricos y de software de la placa prototipado (20 hs).
-			\item  Informe con resultados y propuestas de mejoras (8 hs).	
+			\item Ensayo del bus de comunicación (16 h). 
+			\item Búsqueda de lugares que tengan sala de ensayos  con bobina de Helmholtz de al menos dos ejes para medir microsatélites (20 h).
+			\item  Medición de parámetros eléctricos y de software de la placa prototipado (20 h).
+			\item  Informe con resultados y propuestas de mejoras (8 h).	
 		\end{enumerate}
 	\item Desarrollo final del producto. 
 		\begin{enumerate}
-			\item Realizar correcciones de software (25 hs). 
-			\item Realizar correcciones en el diseño del PCB (25 hs).
-			\item Fabricación del PCB (3 hs) . 
-			\item Ensayo con bobina de Helmholtz (10 hs). 		
-			\item Medición de parámetros eléctricos y de software de la placa en su versión final (10 hs). 
-			\item Redacción de informe y memoria técnica (60 hs). 
+			\item Realizar correcciones de software (25 h). 
+			\item Realizar correcciones en el diseño del PCB (25 h).
+			\item Fabricación del PCB (3 h). 
+			\item Ensayo con bobina de Helmholtz (10 h). 		
+			\item Medición de parámetros eléctricos y de software de la placa en su versión final (10 h). 
+			\item Redacción de informe y memoria técnica (60 h).
+			\item Presentación y defensa del trabajo ante el jurado (30 h) 
 		\end{enumerate}
 
-Cantidad total de horas: 529 hs.  
+Cantidad total de horas: 599.  
 
 
 \end{enumerate}
@@ -346,7 +350,22 @@ Cantidad total de horas: 529 hs.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
+	En la figura \ref{fig:AoN} se muestra el diagrama de \textit{Activity on node}. Los códigos WBS utilizados son los presentados en la sección \ref{sec:wbs}. Las siglas utilizadas en este diagrama son: 
+	\begin{itemize}
+		\item SC: sistema de coordenadas. 
+		\item SW: software
+		\item HW: Hardware
+	\end{itemize}
 
+La linea amarilla de la figura \ref{fig:AoN} se encuentra marcado el camino crítico del proyecto y tiene 541 horas de trabajo. 
+
+
+\begin{figure}[htpb]
+	\centering 
+	\includegraphics[width=\linewidth]{Figuras/aoneps.eps}
+	\caption{Diagrama de \textit{Activity on node.}}
+	\label{fig:AoN}
+\end{figure}
 
 
 
@@ -354,10 +373,21 @@ Cantidad total de horas: 529 hs.
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
+El diagrama de Gantt se ha realizado con 24 horas semanales de trabajo, con inicio el día 5 de diciembre del año 2023. 
+%\vspace{-10mm}
+\begin{figure}[h!]
+\includegraphics[trim=0mm 15.33cm 10mm 0mm,clip,width=\linewidth,height=10cm]{Figuras/ADCS.pdf} 
+\caption{Diagrama de Gantt} 
+
+
+\end{figure}
+
+
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
+La tabla de costos directos e indirectos es estimativa y puede variar según las necesidades del proyecto. 
 
 \begin{table}[htpb]
 \centering
@@ -370,24 +400,24 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+ BOSCH BMI270 & 
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{15 USD} &
+  \multicolumn{1}{c|}{15 USD} \\ \hline
+ Placa de desarrollo STM32 o simil de bajo consumo&
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{50 USD} &
+  \multicolumn{1}{c|}{50 USD} \\ \hline
+conector PC104 & 1	 
+   & \multicolumn{1}{c|}{20 USD}
+   & \multicolumn{1}{c|}{20 USD}
    \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+sensor solar & 3  
+   & \multicolumn{1}{c|}{4 USD} 
+   & \multicolumn{1}{c|}{12 USD} 
    \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} & 
+\multicolumn{1}{c|}{97 USD} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -395,22 +425,18 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+Fabricación PCB con envio & \multicolumn{1}{c|}{10} 
+   & \multicolumn{1}{c|}{-} 
+   & \multicolumn{1}{c|}{50 USD} 
    \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+Componentes electrónicos varios  & \multicolumn{1}{c|}{-}
+   &\multicolumn{1}{c|}{-}
+   &\multicolumn{1}{c|}{50 USD}
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{100 USD} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|c|}{TOTAL} & 197 USD
    \\ \hline
 \end{tabularx}%
 \end{table}
@@ -419,103 +445,159 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+Riesgo 1: Seleccionar mal el microcontrolador. 
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
-
-Riesgo 2:
-\begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	 \item Severidad (8)
+	 \newline Si el microcontrolador se selecciona de forma inadecuada pueden existir problemas sobre otras partes del sistema.  
+	 \item Ocurrencia (4):\newline 
+	 	Será baja dado que se van a seleccionar microcontroladores probados en ámbitos aeroespaciales y que posean una gran cantidad de usuarios.  
 \end{itemize}
 
-Riesgo 3:
+Riesgo 2: Imposibilidad de importar el PCB poblado a Argentina
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (10):
+	\newline Si fuese imposible por cuestiones normativas importar el PCB poblado a Argentina, se deben reorganizar todas las tareas desde la 3 en adelante.  
+	\item Ocurrencia (9)\newline 
+	Ha ocurrido en proyectos anteriores donde por cuestiones normativas de importación de Argentina el producto ha quedado retenido en aduana. 
 \end{itemize}
 
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+Riesgo 3: Diseño y simulación electrónica 
+\begin{itemize}
+	\item Severidad (8):
+	\newline Imposibilidad de mandar a poblar el PCB por falta de insumos y sea necesario un retrabajo de las etapas 2.7 y 2.8 consumiendo una mayor cantidad de tiempo de la prevista.  
+	\item Ocurrencia (5)\newline 
+	En general cuando no existen ciertos componentes el fabricante te sugiere reemplazos para que sean evaluados en el diseño respetando la huella del componente. 
+\end{itemize}
+
+Riesgo 4: No existencia de lugares con bobina de Helmholtz
+\begin{itemize}
+	\item Severidad (10):
+	\newline El sistema ADCS debe probarse en este tipo de dispositivos porque emula la situación del espacio exterior. Es una validación importante  
+	\item Ocurrencia (4)\newline 
+	Actualmente estas instalaciones se encuentran facilmente, e incluso existe comunidades donde invitan a fabricarse una.  
+\end{itemize}
+
+
+Riesgo 5:  Mal diseño de arquitectura de software
+\begin{itemize}
+	\item Severidad (7):
+	\newline Un mal diseño de la arquitecura de software hace que los plazos se extiendan dado que puede llevar una mayot cantidad de horas de integración  
+	\item Ocurrencia (3)\newline 
+	Se tendrá en cuenta la integración de todos los componentes antes de realizar el diseño de la arquitectura de software.  
+\end{itemize}
+
+
+
+Riesgo 6:  Subestimar el tiempo de simulación y algoritmos
+\begin{itemize}
+	\item Severidad (9):
+	\newline Una mala estimación de estos tiempos impide que se realice el software y hardware para realizar el hardware y software 
+	\item Ocurrencia (5)\newline 
+	Dado que el personal posee experiencia en sistemas de coordenadas no es muy probable que ocurra. 
+\end{itemize}
+
+
+
+
+
 
 \begin{table}[htpb]
 \centering
+
+
+
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-\end{tabularx}%
+Riesgo  & S  & O & RPN & S* & O* & RPN* \\ \hline
+     1  & 8  & 4 & 32  &    &    &      \\ \hline
+     2  & 10 & 9 & 90  &    &    &      \\ \hline
+     3  & 8  & 4 & 40  &    &    &      \\ \hline
+     4  & 10 & 4 & 40  &    &    &      \\ \hline
+     5  & 7  & 3 & 21  &    &    &      \\ \hline
+     6  & 9  & 5 & 45  &    &    &      \\ \hline
+
+\end{tabularx}
 \end{table}
 
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 35
 
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado lamitigación.
 
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
- 
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
 
-\end{consigna}
+%% PLAN DE MITIGACION DE RIESGOS 
+Riesgo 2:  % Subestimar el tiempo de simulación y algoritmos
+\begin{itemize}
+	\item Severidad (9):
+	\newline 
+	\item Ocurrencia (5)\newline 
+
+\end{itemize}
+
+
+Riesgo 3:  Subestimar el tiempo de simulación y algoritmos
+\begin{itemize}
+	\item Severidad 
+	\newline 
+	\item Ocurrencia\newline 
+
+\end{itemize}
+
+
+Riesgo 4:  Subestimar el tiempo de simulación y algoritmos
+\begin{itemize}
+	\item Severidad (9):
+	\newline 
+	\item Ocurrencia (5)\newline 
+\end{itemize}
+
+Riesgo 6:  Subestimar el tiempo de simulación y algoritmos
+\begin{itemize}
+	\item Severidad (9):
+	\newline 
+	\item Ocurrencia (5)\newline 
+\end{itemize}
+
+
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
-
 \begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
-
-\begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+	\item Req 1: copiar acá el requerimiento.
+	
+	\begin{itemize}
+		\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
+		\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+	\end{itemize}
+	
 \end{itemize}
 
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-
-\end{consigna}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
+\begin{enumerate}
+	\item Análisis de seguimiento del plan original: 
+	\begin{itemize}
+		\item Responsable: Valdez Gastón
+		\item Se evaluarán el nivel de cumplimiento de las tareas.
+		\item Se realizará una comparación de fechas en conjunto con el diagrama de Gannt. 
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+	\end{itemize}
+	\item Se dará agradecimiento a todos los interesados, y en especial al equipo de trabajo, colaboradores y consultores mencionandolos en la memoria técnica.
+	\item Identificación de procesos útiles e inútiles: 
+	\begin{itemize}
+		\item Responsable: \supname 
+		\item Detectar de los procesos, cual de ellos puede repetirse o no en futuros desarrollos.
+	\end{itemize}
+	\item Se realizará la presentación pública del proyecto, dando paso a la defensa del mismo antejurados.
+	\item Se enviarán los informes al director 
 
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
-
-\end{consigna}
+\end{enumerate}
 
 
 \end{document}
